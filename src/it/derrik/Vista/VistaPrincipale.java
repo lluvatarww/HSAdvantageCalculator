@@ -1,4 +1,10 @@
+package it.derrik.Vista;
 
+
+import it.derrik.Controllo.AzioneNuovaPartita;
+import it.derrik.Modello.Suggeritore;
+import it.derrik.Modello.Grafico;
+import it.derrik.Modello.Giocatore;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -518,15 +524,15 @@ public class VistaPrincipale extends javax.swing.JPanel {
     private void risultato(int a) {
         if (a <= 47) {
             this.immagineEsito.setIcon(new ImageIcon(getClass().getResource(
-                    "immagini/sconfitta.png")));
+                    "/immagini/sconfitta.png")));
         }
         if (a > 47 && a < 53) {
             this.immagineEsito.setIcon(new ImageIcon(getClass().getResource(
-                    "immagini/pari.png")));
+                    "/immagini/pari.png")));
         }
         if (a >= 53) {
             this.immagineEsito.setIcon(new ImageIcon(getClass().getResource(
-                    "immagini/vittoria.png")));
+                    "/immagini/vittoria.png")));
         }
     }
     

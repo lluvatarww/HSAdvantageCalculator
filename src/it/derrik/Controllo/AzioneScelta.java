@@ -1,4 +1,9 @@
+package it.derrik.Controllo;
 
+
+import it.derrik.Vista.FrameSceltaMazzo;
+import it.derrik.Vista.VistaPrincipale;
+import it.derrik.Modello.Giocatore;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import javax.swing.AbstractAction;
@@ -65,31 +70,31 @@ public class AzioneScelta extends AbstractAction {
     private ImageIcon sceltaImmagine(String nome){
         ImageIcon icon = null;
         if(nome.equals("Druido")){
-            icon = new ImageIcon(getClass().getResource("immagini/druidSmall.png"));
+            icon = new ImageIcon(getClass().getResource("/immagini/druidSmall.png"));
         }
         if(nome.equals("Cacciatore")){
-            icon = new ImageIcon(getClass().getResource("immagini/HunterSmall.png"));
+            icon = new ImageIcon(getClass().getResource("/immagini/HunterSmall.png"));
         }
         if(nome.equals("Ladro")){
-            icon = new ImageIcon(getClass().getResource("immagini/rogueSmall.png"));
+            icon = new ImageIcon(getClass().getResource("/immagini/rogueSmall.png"));
         }
         if(nome.equals("Mago")){
-            icon = new ImageIcon(getClass().getResource("immagini/mageSmall.png"));
+            icon = new ImageIcon(getClass().getResource("/immagini/mageSmall.png"));
         }
         if(nome.equals("Guerriero")){
-            icon = new ImageIcon(getClass().getResource("immagini/warriorSmall.png"));
+            icon = new ImageIcon(getClass().getResource("/immagini/warriorSmall.png"));
         }
         if(nome.equals("Paladino")){
-            icon = new ImageIcon(getClass().getResource("immagini/paladinSmall.png"));
+            icon = new ImageIcon(getClass().getResource("/immagini/paladinSmall.png"));
         }
         if(nome.equals("Sciamano")){
-            icon = new ImageIcon(getClass().getResource("immagini/shamanSmall.png"));
+            icon = new ImageIcon(getClass().getResource("/immagini/shamanSmall.png"));
         }
         if(nome.equals("Sacerdote")){
-            icon = new ImageIcon(getClass().getResource("immagini/priesSmall.png"));
+            icon = new ImageIcon(getClass().getResource("/immagini/priesSmall.png"));
         }
         if(nome.equals("Stregone")){
-            icon = new ImageIcon(getClass().getResource("immagini/warlockSmall.png"));
+            icon = new ImageIcon(getClass().getResource("/immagini/warlockSmall.png"));
         }
         return icon;
     }

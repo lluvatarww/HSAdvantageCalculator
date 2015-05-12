@@ -1,3 +1,5 @@
+package it.derrik.Modello;
+
 
 import java.awt.Color;
 import java.awt.Graphics;

@@ -1,4 +1,7 @@
 
+import it.derrik.Controllo.AzioneNuovaPartita;
+import it.derrik.Vista.FrameSceltaMazzo;
+import it.derrik.Vista.VistaPrincipale;
 import javax.swing.JFrame;
 
 /*

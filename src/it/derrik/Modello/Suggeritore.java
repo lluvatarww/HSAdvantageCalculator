@@ -1,4 +1,7 @@
+package it.derrik.Modello;
 
+
+import it.derrik.Vista.VistaPrincipale;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;

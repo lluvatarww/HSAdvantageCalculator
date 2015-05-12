@@ -1,4 +1,7 @@
+package it.derrik.Modello;
 
+
+import it.derrik.Vista.VistaSceltaMazzo;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
