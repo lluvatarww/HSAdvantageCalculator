@@ -71,6 +71,8 @@ public class AzioneNuovoTurno extends AbstractAction{
         vp.getVg().setContentPane(vp.getPanel());
         vp.setSuggeritore(new Suggeritore(vp.getGiocatore1(), vp.getGiocatore2(), vp));
         vp.getjTextArea1().setText(vp.getSuggeritore().suggerisci());
+        vp.getCiz().setValue(giocatore2.getCarteInMazzo() - 1);
+        vp.getCiz1().setValue(giocatore1.getCarteInMazzo() - 1);
     }
     
     
