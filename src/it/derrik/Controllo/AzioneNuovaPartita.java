@@ -56,6 +56,8 @@ public class AzioneNuovaPartita extends AbstractAction {
         vp.getPercentualeTu().setText("%");
         vp.getImmagineEsito().setIcon(null);
         vp.setGrafico(new Grafico());
+        vp.getVg().getContentPane().removeAll();
+        vp.getjTextArea1().setText("Qui usciranno dei suggerimenti durante la partita");
     }
     
 }

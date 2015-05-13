@@ -1,7 +1,9 @@
 package it.derrik.Vista;
 
 
+import it.derrik.Controllo.AzioneGAP;
 import it.derrik.Controllo.AzioneNuovaPartita;
+import it.derrik.Controllo.AzioneNuovoTurno;
 import it.derrik.Modello.Suggeritore;
 import it.derrik.Modello.Grafico;
 import it.derrik.Modello.Giocatore;
@@ -37,6 +39,11 @@ public class VistaPrincipale extends javax.swing.JPanel {
         this.jTextArea1.setText("Qui usciranno dei suggerimenti durante la partita");
         this.fsm = new FrameSceltaMazzo(this);
         this.bottoneNuovaPartita.setAction(new AzioneNuovaPartita(this, fsm));
+        this.vg.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.GAP.setAction(new AzioneGAP(this));
+        this.vg.setResizable(false);
+        this.bottoneNuovoTurno.setAction(new AzioneNuovoTurno(this));
+        this.bottoneNuovoTurno.setEnabled(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -377,11 +384,6 @@ public class VistaPrincipale extends javax.swing.JPanel {
         bottoneNuovoTurno.setText("Nuovo Turno");
         bottoneNuovoTurno.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bottoneNuovoTurno.setEnabled(false);
-        bottoneNuovoTurno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bottoneNuovoTurnoActionPerformed(evt);
-            }
-        });
 
         bottoneNuovaPartita.setText("Nuova Partita");
         bottoneNuovaPartita.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -405,11 +407,6 @@ public class VistaPrincipale extends javax.swing.JPanel {
         GAP.setText("GAP");
         GAP.setToolTipText("Premi per mostrare il Grafico Andamento Partita");
         GAP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        GAP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GAPActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -464,35 +461,6 @@ public class VistaPrincipale extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bottoneNuovoTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneNuovoTurnoActionPerformed
-        giocatore1.setPv((Integer) this.pv1.getValue());
-        giocatore2.setPv((Integer) this.pv.getValue());
-        giocatore1.setCarteInMano((Integer) this.cim1.getValue());
-        giocatore2.setCarteInMano((Integer) this.cim.getValue());
-        giocatore1.setCarteInMazzo((Integer) this.ciz1.getValue());
-        giocatore2.setCarteInMazzo((Integer) this.ciz.getValue());
-        giocatore1.setCarteInGioco((Integer) this.cig1.getValue());
-        giocatore2.setCarteInGioco((Integer) this.cig.getValue());
-        giocatore1.setDanniInGioco((Integer) this.dig1.getValue());
-        giocatore2.setDanniInGioco((Integer) this.dig.getValue());
-        giocatore1.setSaluteProvocazione((Integer) this.SSP1.getValue());
-        giocatore2.setSaluteProvocazione((Integer) this.SSP.getValue());
-        int totale1g = giocatore1.totale(giocatore2.getDanniInGioco());
-        int totale2 = giocatore2.totale(giocatore1.getDanniInGioco());
-        this.totale1.setText("" + totale1g);
-        this.totale.setText("" + totale2);
-        int perc1 = this.percentuale(totale1g, totale2);
-        int perc2 = 100 - perc1;
-        this.percentualeTu.setText("" + perc1 + "%");
-        this.percentualeAvversario.setText("" + perc2 + "%");
-        this.risultato(perc1);
-        this.turno++;
-        this.contatoreTurno.setText("" + this.turno);
-        grafico.getTurno().put(turno, perc1);
-        this.suggeritore = new Suggeritore(this.giocatore1, this.giocatore2, this);
-        this.jTextArea1.setText(suggeritore.suggerisci());
-    }//GEN-LAST:event_bottoneNuovoTurnoActionPerformed
-
     private void infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoActionPerformed
         JOptionPane.showMessageDialog(this, "Come Funziona:\n"
                 + "Clicca su Nuova Partita all'inizio del gioco, selezionando la classe con cui giocherai e quella dell'avversario per iniziare la partita \n"
@@ -500,43 +468,10 @@ public class VistaPrincipale extends javax.swing.JPanel {
                 + "Verrà visualizzata una percentuale che indica una stima dell'andamento della partita in base all'ultima giocata fatta. \n Ovviamente si può calcolare in qualsiasi momento della partita, ma è consigliabile farlo alla fine del proprio turno.\n", "Come si usa", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_infoActionPerformed
-
-    private void GAPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GAPActionPerformed
-        VistaGrafico vg = new VistaGrafico();
-        JPanel panel = new JPanel();
-        JButton button = new JButton("Chiudi");
-        panel.setLayout(new BorderLayout());
-        panel.add(this.grafico.disegnaGrafico(), BorderLayout.NORTH);
-        panel.add(button, BorderLayout.SOUTH);
-        button.addActionListener(new ActionListener() {
-            
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                vg.setVisible(false);
-            }
-        });
-        vg.setContentPane(panel);
-        vg.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        vg.pack();
-        vg.setVisible(true);
-    }//GEN-LAST:event_GAPActionPerformed
     
-    private void risultato(int a) {
-        if (a <= 47) {
-            this.immagineEsito.setIcon(new ImageIcon(getClass().getResource(
-                    "/immagini/sconfitta.png")));
-        }
-        if (a > 47 && a < 53) {
-            this.immagineEsito.setIcon(new ImageIcon(getClass().getResource(
-                    "/immagini/pari.png")));
-        }
-        if (a >= 53) {
-            this.immagineEsito.setIcon(new ImageIcon(getClass().getResource(
-                    "/immagini/vittoria.png")));
-        }
-    }
     
-    private int percentuale(int a, int b) {
+    
+    public int percentuale(int a, int b) {
         return (a * 100) / (a + b);
     }
 
@@ -582,6 +517,9 @@ public class VistaPrincipale extends javax.swing.JPanel {
     private Grafico grafico = new Grafico();
     private Suggeritore suggeritore;
     private FrameSceltaMazzo fsm;
+    VistaGrafico vg = new VistaGrafico();
+    JPanel panel = new JPanel();
+    JButton button = new JButton("Chiudi");
     
     public JLabel getContatoreTurno() {
         return contatoreTurno;
@@ -830,5 +768,30 @@ public class VistaPrincipale extends javax.swing.JPanel {
     public void setFsm(FrameSceltaMazzo fsm) {
         this.fsm = fsm;
     }
+
+    public VistaGrafico getVg() {
+        return vg;
+    }
+
+    public void setVg(VistaGrafico vg) {
+        this.vg = vg;
+    }
+
+    public JPanel getPanel() {
+        return panel;
+    }
+
+    public void setPanel(JPanel panel) {
+        this.panel = panel;
+    }
+
+    public JButton getButton() {
+        return button;
+    }
+
+    public void setButton(JButton button) {
+        this.button = button;
+    }
+    
     
 }
