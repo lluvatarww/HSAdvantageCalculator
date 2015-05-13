@@ -100,10 +100,25 @@ public class StringheSuggerimenti {
     public static String TURNO2DRUIDOAVV = "Se l'avversario gioca crescita rigogliosa aspettati servitori molto forti al prossimo turno ";    
     
     // suggerimenti mago tu
-    
+    public static String MAGOTU = "Le tue magie sono un punto di forza, aumenta i danni giocando servitori con +danno magico";
+    public static String TURNO2MAGOSERVITORIAVV = "Perchè non distruggere quel servitore con una bel dardo di gelo";
+    public static String MOLTISERVITORIAVVMAGO = "Una Tormenta o una Colonna di Fuoco potrebbero ribaltare la situazione";
+    public static String TURNO4MAGO = "Hai accesso a carte molto forti come Palla di Fuoco o Elementale dell'Acqua, usali con attenzione";
+    public static String NEMICO10PVMAGO = "Ah se pescassi una pirosfera!";
     
     //suggerimenti mago avversario
+    public static String MAGOAVV = "Distruggere servitori con +danno magico ti eviterà molti danni";
+    public static String TURNO6MAGOAVV = "Non giocare troppi servitori tutti insieme o saranno il bersaglio di una Tempesta o Colonna di Fuoco";
+    public static String SALUTE10MAGOAVV = "Speriamo non abbia una Pirosfera sennò sei fritto, è proprio il caso di dirlo";
+    public static String TURNO3MAGOAVV = "Attento a magie che possono uccidere i tuoi servitori, giocati quelli con meno valore o con molta salute";
+    public static String TURNO7MAGOAVV = "Se l'avversario gioca Antonidas cerca di eliminarlo il prima possibile";
+
+    // suggerimenti ladro tu
+    
+    
+    // suggerimenti ladro avversario
 
 
 }   
+
 
