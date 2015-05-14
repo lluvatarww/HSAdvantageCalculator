@@ -127,10 +127,18 @@ public class StringheSuggerimenti {
     public static String SERVITOREMOLTAVITALADROAVVTURNO5 = "Quel servitore è un bersaglio ideale per Assassinio, evita di aumentargli le statistiche";
     public static String SERVITOREPOCAVITALADROAVV= "Quel servitore è un bersaglio ideale per Tramortimento, potresti rimetterci la pelle";
 
-    // suggerimenti guerriero tu
-    
-    
-    //suggerimenti guerriero avversario
+    // suggerimenti guerriero avversario
+    public static String MOLTISSIMAVITAGUERRIEROAVV = "Fai attenzione a possibili colpi di scudo, evita quanto più possibile che il guerriero aumenti il suo scudo";
+    public static String GUERRIERONOSERVITORIDANNOAVV = "Fai in modo che l'arma del nemico gli provochi più danni di quanti ne fa";
+    public static String MOLTISERVITORIGUERRAVV = "Hai molti servitori in campo, aspettati una Rissa (o quantomeno un Turbine o un Fendente)";
+    public static String ALTAPROVOCAZIONEGUERRAVV = "Distruggi prima possibile i servitori nemici con Provocazione. \n potrebbero fare molti danni in più con Rabbia Interiore o Comandante Crudele"; 
+    public static String TURNO7GUERRAVV = "Fai molta attenzione, il Guerriero può fare molti danni da ora in poi";    
+            
+    //suggerimenti guerriero tu
+    public static String MOLTAVITAGUERRIERO = "Più scudo riesci ad avere meglio è, continua così";
+    public static String DUESERVITORIGUERR ="Quesi due servitori sono un bersaglio ideale per Fendente ";
+            
+            
 }   
 
 
