@@ -114,11 +114,24 @@ public class StringheSuggerimenti {
     public static String TURNO7MAGOAVV = "Se l'avversario gioca Antonidas cerca di eliminarlo il prima possibile";
 
     // suggerimenti ladro tu
-    
+    public static String LADROTURNO5 = "Assassinio e Spada dell'Assassino sono delle buone carte da giocare adesso";
+    public static String LADROMOLTISERVITORAVV = "Ventaglio di lame e Vortice di lame potrebbero ribaltare la situazione";
+    public static String LADROUNSERVITOREAVV = "E' il momento giusto per usare Assassinio o Sabotaggio (o anche Tramortimento)";
+    public static String POCHECARTELADRO = "Scatto!";
+    public static String POCAVITAAVVLADRO = "Un Assalto Funesto ed hai vinto!";
     
     // suggerimenti ladro avversario
+    public static String SERVITORESUBITOLADROAVV = "Fai attenzione, il tuo servitore è un bersaglio ideale per Pugnalata alle Spalle o per un attacco diretto ";
+    public static String TURNO3LADROAVV = "Attento a possibili combo Pugnalata alle Spalle, Agente dell'IR:7, Lama della Perdizione ";
+    public static String LADROAVV = "Cerca di prevedere possibili combo, se le eviti riduci di molto le abilità dell'avversario";
+    public static String SERVITOREMOLTAVITALADROAVVTURNO5 = "Quel servitore è un bersaglio ideale per Assassinio, evita di aumentargli le statistiche";
+    public static String SERVITOREPOCAVITALADROAVV= "Quel servitore è un bersaglio ideale per Tramortimento, potresti rimetterci la pelle";
 
-
+    // suggerimenti guerriero tu
+    
+    
+    //suggerimenti guerriero avversario
 }   
+
 
 

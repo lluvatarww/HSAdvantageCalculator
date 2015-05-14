@@ -170,12 +170,98 @@ public class Suggeritore {
     }
     
     private void suggerimentiEroe(){
+    if("Druido".equals(giocatore1.getEroe())){
     
     }
-    
-    private void suggerimentiCasuali(){
+    if("Druido".equals(giocatore2.getEroe())){
     
     }
+    if("Cacciatore".equals(giocatore1.getEroe())){
+        this.suggerimentiCacciatoreTu();
+    }
+    if("Cacciatore".equals(giocatore2.getEroe())){
+        this.suggerimentiCacciatoreAvv();
+    }
+    if("Guerriero".equals(giocatore1.getEroe())){
+    
+    }
+    if("Guerriero".equals(giocatore2.getEroe())){
+    
+    }
+    if("Ladro".equals(giocatore1.getEroe())){
+    
+    }
+    if("Ladro".equals(giocatore2.getEroe())){
+    
+    }
+    if("Mago".equals(giocatore1.getEroe())){
+    
+    }
+    if("Mago".equals(giocatore2.getEroe())){
+    
+    }
+    if("Paladino".equals(giocatore1.getEroe())){
+    
+    }
+    if("Paladino".equals(giocatore1.getEroe())){
+    
+    }
+    if("Sacerdote".equals(giocatore1.getEroe())){
+    
+    }
+    if("Sacerdote".equals(giocatore2.getEroe())){
+    
+    }
+    if("Sciamano".equals(giocatore1.getEroe())){
+    
+    }
+    if("Sciamano".equals(giocatore2.getEroe())){
+    
+    }
+    if("Stregone".equals(giocatore1.getEroe())){
+    
+    }
+    if("Stregone".equals(giocatore2.getEroe())){
+    
+    }
+    }
+   
+    private void suggerimentiCacciatoreTu(){
+        if(giocatore2.getPv() < 8){
+        this.suggerimenti.add(StringheSuggerimenti.POCAVITAAVVCACC);
+        }
+        if(giocatore1.getCarteInGioco() > 4){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORICACC);    
+        }
+        if(giocatore1.getCarteInMano() < 3 && giocatore2.getCarteInGioco() < 3){
+        this.suggerimenti.add(StringheSuggerimenti.POCHECARTECACCPOCHISERVAVV);  
+        }
+        if(giocatore2.getCarteInGioco() > 3){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORIAVVCACC);
+        }
+        if(giocatore2.getCarteInGioco() == 1 && giocatore2.getSaluteProvocazione() > 0){
+        this.suggerimenti.add(StringheSuggerimenti.UNSERVITOREMOLTAPROVCACC);
+        }
+    }
+    
+    private void suggerimentiCacciatoreAvv(){
+        if(giocatore1.getPv() < 7){
+        this.suggerimenti.add(StringheSuggerimenti.POCAVITATUCACC);
+        }
+        if(giocatore2.getPv() <= 3 ){
+        this.suggerimenti.add(StringheSuggerimenti.POCAVITACACCAVV);    
+        }
+        if(giocatore2.getSaluteProvocazione() > 0 ){
+        this.suggerimenti.add(StringheSuggerimenti.PROVOCAZIONECACC);  
+        }
+        if(vp.getTurno() == 5){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO5CACC);
+        }
+        if(giocatore2.getCarteInMano() <= 2){
+        this.suggerimenti.add(StringheSuggerimenti.POCHECARTECACCAVV);
+        }
+    }
+    
     
     
     public String suggerisci(){
