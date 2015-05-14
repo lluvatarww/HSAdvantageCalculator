@@ -89,7 +89,7 @@ public class StringheSuggerimenti {
     public static String POCAVITATUDRUIDO = "Un Tocco Curativo potrebbe aiutarti a sopravvivere";
     public static String POCAPROVOCAZIONEDRUIDO = "Un marchio della natura o un marchio selvaggio potrebbero essere d'aiuto";
     public static String MOLTAPROVOCAZIONEDRUIDO = "Avere molta provocazione ti pone in buona posizione, fai solo attenzione a magie che possono scavalcarla";
-    public static String MOLTISERVITORIDRUIDOPOCAVITAAVV = "Una Crescita Rigogliosa o un Potere della Natura ti porteranno alla vittoria";
+    public static String MOLTISERVITORIDRUIDOPOCAVITAAVV = "Un Ruggito Selvaggio o un Potere della Natura ti porteranno alla vittoria";
     
     //suggerimenti druido avversario
     public static String MOLTISERVITORIDRUIDOAVV = " Pulisci il campo il prima possibile, se l'avversario ha Ruggito Selvaggio e/o Potere della Natura potresti perdere ";

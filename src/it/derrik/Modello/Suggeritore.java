@@ -171,11 +171,11 @@ public class Suggeritore {
     
     private void suggerimentiEroe(){
     if("Druido".equals(giocatore1.getEroe())){
-    
+        this.suggerimentiDruido();
     }
     if("Druido".equals(giocatore2.getEroe())){
-    
-    }
+        this.suggerimentiDruidoAvv();
+    }   
     if("Cacciatore".equals(giocatore1.getEroe())){
         this.suggerimentiCacciatoreTu();
     }
@@ -189,16 +189,16 @@ public class Suggeritore {
     
     }
     if("Ladro".equals(giocatore1.getEroe())){
-    
+        this.suggerimentiLadro();
     }
     if("Ladro".equals(giocatore2.getEroe())){
-    
+        this.suggerimentiLadroAvv();
     }
     if("Mago".equals(giocatore1.getEroe())){
-    
+        this.suggerimentiMago();
     }
     if("Mago".equals(giocatore2.getEroe())){
-    
+        this.suggerimentiMagoAvv();
     }
     if("Paladino".equals(giocatore1.getEroe())){
     
@@ -262,8 +262,113 @@ public class Suggeritore {
         }
     }
     
+    private void suggerimentiDruido(){
+        if(giocatore1.getCarteInGioco() > 4){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORIAVVDRUIDO );
+        }
+        if(giocatore1.getPv() <= 8 ){
+        this.suggerimenti.add(StringheSuggerimenti.POCAVITATUDRUIDO);    
+        }
+        if(giocatore1.getCarteInGioco() > 1 && giocatore1.getSaluteProvocazione() < 2){
+        this.suggerimenti.add(StringheSuggerimenti.POCAPROVOCAZIONEDRUIDO);  
+        }
+        if(giocatore1.getSaluteProvocazione() >= 5){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTAPROVOCAZIONEDRUIDO);
+        }
+        if(giocatore1.getCarteInGioco() > 3 && giocatore2.getPv() < 10 && giocatore2.getSaluteProvocazione() < 5){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORIDRUIDOPOCAVITAAVV);
+        }
+    }
     
+    private void suggerimentiDruidoAvv(){
+        if(giocatore2.getCarteInGioco() > 3){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORIDRUIDOAVV);
+        }
+        if(giocatore2.getPv() <= 3 ){
+        this.suggerimenti.add(StringheSuggerimenti.POCAVITADRUIDOAVV);    
+        }
+        if(vp.getTurno() == 4){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO4DRUIDOAVV);  
+        }
+        if(vp.getTurno() == 7){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO7DRUIDOAVV);
+        }
+        if(vp.getTurno() == 2){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO2DRUIDOAVV);
+        }
+    }
     
+    private void suggerimentiMago(){
+        if(giocatore1.getEroe().equals("Mago")){
+        this.suggerimenti.add(StringheSuggerimenti.MAGOTU);
+        }
+        if(giocatore2.getPv() == 10 ){
+        this.suggerimenti.add(StringheSuggerimenti.NEMICO10PVMAGO);    
+        }
+        if(vp.getTurno() == 3 && giocatore2.getCarteInGioco() > 0){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO2MAGOSERVITORIAVV);  
+        }
+        if(vp.getTurno() == 4){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO4MAGO);
+        }
+        if(giocatore2.getCarteInGioco() > 3){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORIAVVMAGO);
+        }
+    }
+    
+    private void suggerimentiMagoAvv(){
+        if(giocatore2.getEroe().equals("Mago")){
+        this.suggerimenti.add(StringheSuggerimenti.MAGOAVV);
+        }
+        if(giocatore1.getPv() <= 10 ){
+        this.suggerimenti.add(StringheSuggerimenti.SALUTE10MAGOAVV);    
+        }
+        if(vp.getTurno() == 6){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO6MAGOAVV);  
+        }
+        if(vp.getTurno() == 7){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO7MAGOAVV);
+        }
+        if(vp.getTurno() == 3){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO3MAGOAVV);
+        }
+    }
+    
+    private void suggerimentiLadro(){
+        if(giocatore1.getCarteInMano() < 3){
+        this.suggerimenti.add(StringheSuggerimenti.POCHECARTELADRO);
+        }
+        if(giocatore2.getPv() < 5 ){
+        this.suggerimenti.add(StringheSuggerimenti.POCAVITAAVVLADRO);    
+        }
+        if(vp.getTurno() > 5 && giocatore2.getCarteInGioco() == 1 ){
+        this.suggerimenti.add(StringheSuggerimenti.LADROUNSERVITOREAVV);  
+        }
+        if(vp.getTurno() == 5){
+        this.suggerimenti.add(StringheSuggerimenti.LADROTURNO5);
+        }
+        if(giocatore2.getCarteInGioco() > 3){
+        this.suggerimenti.add(StringheSuggerimenti.LADROMOLTISERVITORAVV);
+        }
+    }
+   
+    private void suggerimentiLadroAvv(){
+        if(giocatore1.getEroe().equals("Ladro")){
+        this.suggerimenti.add(StringheSuggerimenti.LADROAVV);
+        }
+        if(vp.getTurno() == 5 && giocatore1.getCarteInGioco() == 1 && giocatore1.getPv() + 5  < giocatore2.getDanniInGioco()){
+        this.suggerimenti.add(StringheSuggerimenti.SERVITOREPOCAVITALADROAVV);    
+        }
+        if(vp.getTurno() == 2 && giocatore1.getCarteInGioco() == 1){
+        this.suggerimenti.add(StringheSuggerimenti.SERVITORESUBITOLADROAVV);  
+        }
+        if(vp.getTurno() == 3){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO3LADROAVV);
+        }
+        if(vp.getTurno() == 5 && giocatore1.getCarteInGioco() == 1 && giocatore1.getPv() > 15){
+        this.suggerimenti.add(StringheSuggerimenti.SERVITOREMOLTAVITALADROAVVTURNO5);
+        }
+    }
     public String suggerisci(){
         this.suggerimentiDanni();
         this.suggerimentiSalute();
