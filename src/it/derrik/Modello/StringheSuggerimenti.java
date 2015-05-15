@@ -131,7 +131,7 @@ public class StringheSuggerimenti {
 
     //suggerimenti guerriero tu
     public static String MOLTAVITAGUERRIERO = "Più scudo riesci ad avere meglio è, continua così";
-    public static String DUESERVITORIGUERR = "Quesi due servitori sono un bersaglio ideale per Fendente ";
+    public static String DUESERVITORIGUERR = "Quei due servitori sono un bersaglio ideale per Fendente ";
     public static String MOLTISERVITORINEMICIGUERR = "Scatena una bella Rissa!";
     public static String POCASALUTEGUERRIERO = "Uno scudo saldo o una Signora dello Scudo potrebbero salvarti la vita";
     public static String UNSERVITOREGUERR = "Potresti aumentare l'attacco di quel servitore con Comandante Crudele";
@@ -147,18 +147,18 @@ public class StringheSuggerimenti {
     //suggerimenti paladino avversario
     public static String TURNO3PALADINOAVV = "Attento a combinazioni del tipo Lanciatore di Coltelli e Adunata militare";
     public static String TURNO4PALADINOAVVMOLTISERV = "Evita di mettere altri servitori in campo o potrebbero essere distrutti da Consacrazione ";
-    public static String MOLTIDANNIPALADINOAVV = "Quel servitore potrebbe essere un bersaglio per Pacificatore di Aldor oppure Umiltà";        
+    public static String MOLTIDANNIPALADINOAVV = "Quel servitore potrebbe essere un bersaglio per Pacificatore di Aldor oppure Umiltà";
     public static String POCHISERVITORIPALADINOAVVTURNO5 = "Se l'avversario non si preoccupa di "
-    + "far morire i suoi servitori probabilmente avrà Bolvar Domadraghi in mano";
-    public static String  PALADINOAVV = "Fai attenzione ai segreti del Paladino e ai possibili miglioramenti che può dare alle Reclute Mano D'Argento";      
+            + "far morire i suoi servitori probabilmente avrà Bolvar Domadraghi in mano";
+    public static String PALADINOAVV = "Fai attenzione ai segreti del Paladino e ai possibili miglioramenti che può dare alle Reclute Mano D'Argento";
 
     // suggerimenti sacerdote tu
     public static String SERVITORIPROVOCAZIONESACC = "Potenzia quei servitori con provocazione, aumenta o raddoppia la loro salute";
     public static String MOLTISERVAVVSAC = "Elimina i servitori nemici con Esplosione Sacra o Bomba Fotonica";
     public static String SACERDOTE = "Cerca di mantenere in vita i tuoi servitori il prima possibile, sono la tua arma vincente";
     public static String SERVNEMICO3PV = "Potresti distruggere quel servitore con Parola d'Ombra: dolore";
-    public static String POCODANNOALTAPROVOCAZIONESAC = "Usare fuoco interiore su quel servitore con alta salute lo renderà molto pericoloso per il tuo avversario";       
-    
+    public static String POCODANNOALTAPROVOCAZIONESAC = "Usare fuoco interiore su quel servitore con alta salute lo renderà molto pericoloso per il tuo avversario";
+
     //suggerimenti sacerdote avversario
     public static String TURNO1SACAVV = "Se l'avversario gioca una Chierica della Contea cerca di eliminarla subito, così non potrà pescare";
     public static String TURNO3SACAVV = "Se puoi metti in campo servitori da 4 di attacco, così non saranno bersaglio delle Parole d'Ombra";
@@ -172,19 +172,26 @@ public class StringheSuggerimenti {
     public static String MOLTISERVITORISCIAMANO = "Brama di Sangue ti permetterà di fare moltissimi danni";
     public static String SERVITORENEMICOGROSSOSCIAMANO = "C'è un bersaglio perfetto per Maleficio ";
     public static String NOPROVOCAZIONESCIAMANO = "Lupi Spirituali ti costerà due mana al prossimo turno però avrai una buona difesa";
-    
+
     // suggerimenti Sciamano avversario
     public static String SCIAMANOAV = "Lo sciamano ha varie carte con sovraccarico, cerca di fargli sprecare quanto più mana possibile. \n"
             + "Inoltre fai attenzione a magie ed armi, gli costano poco e fanno molto danno";
     public static String SERVITOREGROSSOSCIAMANOAVV = "Quel servitore potrebbe essere bersaglio di Maleficio o di magie per distruggerlo";
     public static String MOLTISERVITORITUOISCIAMANOAVV = "Lo sciamano ha vari modi per pulire il campo, fai attenzione a non giocare troppi altri servitori";
-    public static String MOLTISERVITORIPOCAPROVOCAZIONESCIAMANOAVV = "Fai molta attenzione, se l'avversario pesca brama di sangue sei finito"; 
+    public static String MOLTISERVITORIPOCAPROVOCAZIONESCIAMANOAVV = "Fai molta attenzione, se l'avversario pesca brama di sangue sei finito";
     public static String POCHECARTESCIAMANOAVV = "Anche se lo sciamano ha alcuni metodi per pescare non sono i migliori del gioco, sei in vantaggio";
-    
+
     // suggerimenti Stregone tu
     public static String STREGONE = "Le tue carte sono molto potenti e grazie al tuo potere non sarai mai senza carte da giocare, stai soltanto attento a non perdere troppi punti vita";
     public static String MOLTISERVITORIAVVSTREGONE = "Hai tanti modi per pulire il campo, trova quello migliore";
-    
+    public static String TURNO2PROVOCAZIONESREGONE = "Proteggi i tuoi punti vita dall'inizio, ottima mossa";
+    public static String POCAVITASTREGONE = "Hai poca vita, cerca di curarti o vincere prima che finiscano, non pescare";
+    public static String MOLTAPROVOCAZIONEAVVSTREGONEMOLTISERVITORI = "Potere Travolgente potrebbe aiutarti a liberarti di quei servitori con provocazione";
+
     // suggerimenti Stregone avversario
-    
+    public static String TURNO3STREGONEAVV = "Fai attenzione ai tuoi servitori, lo stregone può pulire il campo molto facilmente da ora in poi";
+    public static String STREGONEAVV = "Cerca di infliggere più danni possibile velocemente, impedirai allo stregone di pescare carte usando il suo potere";
+    public static String POCAVITASTREGONEAVV = "L'avversario ha poca vita, fagli consumare più carte possibili così non potendo pescare sarai in vantaggio";
+    public static String TURNO9STREGONEAVV = "Attenzione a Sire Jaraxxus e Mal'Ganis, possono cambiare il verso della partita";
+    public static String TURNO2PROVOCAZIONESTREGONEAVV = "Probabilmente quella provocazione sarà un'Ombra del vuoto, cerca di eliminarla il prima possibile o potrebbe essere potenziata";
 }

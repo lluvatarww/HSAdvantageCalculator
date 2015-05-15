@@ -183,10 +183,10 @@ public class Suggeritore {
         this.suggerimentiCacciatoreAvv();
     }
     if("Guerriero".equals(giocatore1.getEroe())){
-    
+        this.suggerimentiGuerriero();
     }
     if("Guerriero".equals(giocatore2.getEroe())){
-    
+        this.suggerimentiGuerrieroAvv();
     }
     if("Ladro".equals(giocatore1.getEroe())){
         this.suggerimentiLadro();
@@ -201,10 +201,10 @@ public class Suggeritore {
         this.suggerimentiMagoAvv();
     }
     if("Paladino".equals(giocatore1.getEroe())){
-    
+        this.suggerimentiPaladino();
     }
     if("Paladino".equals(giocatore1.getEroe())){
-    
+        this.suggerimentiPaladinoAvv();
     }
     if("Sacerdote".equals(giocatore1.getEroe())){
     
@@ -369,6 +369,189 @@ public class Suggeritore {
         this.suggerimenti.add(StringheSuggerimenti.SERVITOREMOLTAVITALADROAVVTURNO5);
         }
     }
+    
+    private void suggerimentiGuerriero(){
+        if(giocatore1.getPv() > 30){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTAVITAGUERRIERO);
+        }
+        if(giocatore2.getCarteInGioco() == 2){
+        this.suggerimenti.add(StringheSuggerimenti.DUESERVITORIGUERR );    
+        }
+        if(giocatore2.getCarteInGioco() > 3){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORINEMICIGUERR);  
+        }
+        if(giocatore1.getPv() < 10){
+        this.suggerimenti.add(StringheSuggerimenti.POCASALUTEGUERRIERO);
+        }
+        if(vp.getTurno() > 3 && giocatore1.getCarteInGioco() == 1 ){
+        this.suggerimenti.add(StringheSuggerimenti.UNSERVITOREGUERR);
+        }
+    }
+    
+    private void suggerimentiGuerrieroAvv(){
+        if(giocatore2.getPv() > 30){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISSIMAVITAGUERRIEROAVV);
+        }
+        if(giocatore2.getCarteInGioco() == 0 && giocatore2.getDanniInGioco() > 0){
+        this.suggerimenti.add(StringheSuggerimenti.GUERRIERONOSERVITORIDANNOAVV );    
+        }
+        if(giocatore1.getCarteInGioco() > 3 && giocatore2.getCarteInGioco() < 2){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORIGUERRAVV);  
+        }
+        if(vp.getTurno() == 7){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO7GUERRAVV);
+        }
+        if(giocatore2.getSaluteProvocazione() > 5){
+        this.suggerimenti.add(StringheSuggerimenti.ALTAPROVOCAZIONEGUERRAVV);
+        }
+    }
+    
+    private void suggerimentiPaladino(){
+        if(giocatore1.getPv() < 10 && giocatore1.getCarteInMano() <= 3){
+        this.suggerimenti.add(StringheSuggerimenti.POCHECARTEINMANOPOCAVITA);
+        }
+        if(giocatore1.getSaluteProvocazione() >= 5){
+        this.suggerimenti.add(StringheSuggerimenti.POCODANNOPALADINOPROVOCAZIONE );    
+        }
+        if(giocatore2.getCarteInGioco() < 2){
+        this.suggerimenti.add(StringheSuggerimenti.POCHISERVITORIPALADINO);  
+        }
+        if(giocatore2.getDanniInGioco() > 5 && giocatore2.getCarteInGioco() < 3){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTIDANNIAVVPALADINO);
+        }
+        if(giocatore2.getCarteInGioco() >= 4 && vp.getTurno() > 6){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORIAVVPALADINO);
+        }
+    }
+    
+    private void suggerimentiPaladinoAvv(){
+        if(vp.getTurno() > 3){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO3PALADINOAVV);
+        }
+        if(giocatore1.getCarteInGioco() > 3 && vp.getTurno() == 4){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO4PALADINOAVVMOLTISERV );    
+        }
+        if(giocatore2.getCarteInGioco() == 1 && giocatore2.getDanniInGioco() > 4){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTIDANNIPALADINOAVV );  
+        }
+        if(vp.getTurno() > 5 && vp.getTurno() <= 9 && giocatore2.getCarteInGioco() < 2){
+        this.suggerimenti.add(StringheSuggerimenti.POCHISERVITORIPALADINOAVVTURNO5);
+        }
+        if(giocatore2.getEroe().equals("Paladino")){
+        this.suggerimenti.add(StringheSuggerimenti.PALADINOAVV);
+        }
+    }
+    
+    private void suggerimentiSacerdote(){
+        if(giocatore2.getPv() > 30){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISSIMAVITAGUERRIEROAVV);
+        }
+        if(giocatore2.getCarteInGioco() == 0 && giocatore2.getDanniInGioco() > 0){
+        this.suggerimenti.add(StringheSuggerimenti.GUERRIERONOSERVITORIDANNOAVV );    
+        }
+        if(giocatore1.getCarteInGioco() > 3 && giocatore2.getCarteInGioco() < 2){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORIGUERRAVV);  
+        }
+        if(vp.getTurno() == 7){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO7GUERRAVV);
+        }
+        if(giocatore2.getSaluteProvocazione() > 5){
+        this.suggerimenti.add(StringheSuggerimenti.ALTAPROVOCAZIONEGUERRAVV);
+        }
+    }
+    
+    private void suggerimentiSacerdoteAvv(){
+        if(giocatore2.getPv() > 30){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISSIMAVITAGUERRIEROAVV);
+        }
+        if(giocatore2.getCarteInGioco() == 0 && giocatore2.getDanniInGioco() > 0){
+        this.suggerimenti.add(StringheSuggerimenti.GUERRIERONOSERVITORIDANNOAVV );    
+        }
+        if(giocatore1.getCarteInGioco() > 3 && giocatore2.getCarteInGioco() < 2){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORIGUERRAVV);  
+        }
+        if(vp.getTurno() == 7){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO7GUERRAVV);
+        }
+        if(giocatore2.getSaluteProvocazione() > 5){
+        this.suggerimenti.add(StringheSuggerimenti.ALTAPROVOCAZIONEGUERRAVV);
+        }
+    }
+    
+    private void suggerimentiSciamano(){
+        if(giocatore2.getPv() > 30){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISSIMAVITAGUERRIEROAVV);
+        }
+        if(giocatore2.getCarteInGioco() == 0 && giocatore2.getDanniInGioco() > 0){
+        this.suggerimenti.add(StringheSuggerimenti.GUERRIERONOSERVITORIDANNOAVV );    
+        }
+        if(giocatore1.getCarteInGioco() > 3 && giocatore2.getCarteInGioco() < 2){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORIGUERRAVV);  
+        }
+        if(vp.getTurno() == 7){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO7GUERRAVV);
+        }
+        if(giocatore2.getSaluteProvocazione() > 5){
+        this.suggerimenti.add(StringheSuggerimenti.ALTAPROVOCAZIONEGUERRAVV);
+        }
+    }
+    
+    private void suggerimentiSciamanoAvv(){
+        if(giocatore2.getPv() > 30){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISSIMAVITAGUERRIEROAVV);
+        }
+        if(giocatore2.getCarteInGioco() == 0 && giocatore2.getDanniInGioco() > 0){
+        this.suggerimenti.add(StringheSuggerimenti.GUERRIERONOSERVITORIDANNOAVV );    
+        }
+        if(giocatore1.getCarteInGioco() > 3 && giocatore2.getCarteInGioco() < 2){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORIGUERRAVV);  
+        }
+        if(vp.getTurno() == 7){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO7GUERRAVV);
+        }
+        if(giocatore2.getSaluteProvocazione() > 5){
+        this.suggerimenti.add(StringheSuggerimenti.ALTAPROVOCAZIONEGUERRAVV);
+        }
+    }
+    
+    private void suggerimentiStregone(){
+        if(giocatore2.getPv() > 30){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISSIMAVITAGUERRIEROAVV);
+        }
+        if(giocatore2.getCarteInGioco() == 0 && giocatore2.getDanniInGioco() > 0){
+        this.suggerimenti.add(StringheSuggerimenti.GUERRIERONOSERVITORIDANNOAVV );    
+        }
+        if(giocatore1.getCarteInGioco() > 3 && giocatore2.getCarteInGioco() < 2){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORIGUERRAVV);  
+        }
+        if(vp.getTurno() == 7){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO7GUERRAVV);
+        }
+        if(giocatore2.getSaluteProvocazione() > 5){
+        this.suggerimenti.add(StringheSuggerimenti.ALTAPROVOCAZIONEGUERRAVV);
+        }
+    }
+    
+    private void suggerimentiStregoneAvv(){
+        if(giocatore2.getPv() > 30){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISSIMAVITAGUERRIEROAVV);
+        }
+        if(giocatore2.getCarteInGioco() == 0 && giocatore2.getDanniInGioco() > 0){
+        this.suggerimenti.add(StringheSuggerimenti.GUERRIERONOSERVITORIDANNOAVV );    
+        }
+        if(giocatore1.getCarteInGioco() > 3 && giocatore2.getCarteInGioco() < 2){
+        this.suggerimenti.add(StringheSuggerimenti.MOLTISERVITORIGUERRAVV);  
+        }
+        if(vp.getTurno() == 7){
+        this.suggerimenti.add(StringheSuggerimenti.TURNO7GUERRAVV);
+        }
+        if(giocatore2.getSaluteProvocazione() > 5){
+        this.suggerimenti.add(StringheSuggerimenti.ALTAPROVOCAZIONEGUERRAVV);
+        }
+    }
+    
+   
+   
     public String suggerisci(){
         this.suggerimentiDanni();
         this.suggerimentiSalute();
