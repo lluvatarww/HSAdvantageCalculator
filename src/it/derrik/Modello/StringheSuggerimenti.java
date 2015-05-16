@@ -156,7 +156,7 @@ public class StringheSuggerimenti {
     public static String SERVITORIPROVOCAZIONESACC = "Potenzia quei servitori con provocazione, aumenta o raddoppia la loro salute";
     public static String MOLTISERVAVVSAC = "Elimina i servitori nemici con Esplosione Sacra o Bomba Fotonica";
     public static String SACERDOTE = "Cerca di mantenere in vita i tuoi servitori il prima possibile, sono la tua arma vincente";
-    public static String SERVNEMICO3PV = "Potresti distruggere quel servitore con Parola d'Ombra: dolore";
+    public static String SERVNEMICO3DANNI = "Potresti distruggere quel servitore con Parola d'Ombra: dolore";
     public static String POCODANNOALTAPROVOCAZIONESAC = "Usare fuoco interiore su quel servitore con alta salute lo renderà molto pericoloso per il tuo avversario";
 
     //suggerimenti sacerdote avversario
@@ -174,7 +174,7 @@ public class StringheSuggerimenti {
     public static String NOPROVOCAZIONESCIAMANO = "Lupi Spirituali ti costerà due mana al prossimo turno però avrai una buona difesa";
 
     // suggerimenti Sciamano avversario
-    public static String SCIAMANOAV = "Lo sciamano ha varie carte con sovraccarico, cerca di fargli sprecare quanto più mana possibile. \n"
+    public static String SCIAMANOAVV = "Lo sciamano ha varie carte con sovraccarico, cerca di fargli sprecare quanto più mana possibile. \n"
             + "Inoltre fai attenzione a magie ed armi, gli costano poco e fanno molto danno";
     public static String SERVITOREGROSSOSCIAMANOAVV = "Quel servitore potrebbe essere bersaglio di Maleficio o di magie per distruggerlo";
     public static String MOLTISERVITORITUOISCIAMANOAVV = "Lo sciamano ha vari modi per pulire il campo, fai attenzione a non giocare troppi altri servitori";
