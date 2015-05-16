@@ -562,9 +562,9 @@ public class Suggeritore {
         }
         Random random = new Random();
         String s = "\n";
-        int j1 = random.nextInt(suggerimenti.size());
-        int j2 = random.nextInt(suggerimenti.size());
-        int j3 = random.nextInt(suggerimenti.size());
+        int j1 = random.nextInt(this.suggerimenti.size());
+        int j2 = random.nextInt(this.suggerimenti.size());
+        int j3 = random.nextInt(this.suggerimenti.size());
         if (j1 == j2 && j2 == j3) {
             s = s + suggerimenti.get(j1);
         } else if (j1 == j2 && j1 != j3) {
@@ -575,7 +575,7 @@ public class Suggeritore {
             s = s + suggerimenti.get(j1) + "\n" + suggerimenti.get(j2) + "\n" + suggerimenti.get(
                     j3);
         }
-
+        suggerimenti.clear();
         this.suggerimenti.clear();
         return s;
     }
