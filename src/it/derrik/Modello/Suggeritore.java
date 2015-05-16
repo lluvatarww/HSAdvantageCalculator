@@ -3,7 +3,9 @@ package it.derrik.Modello;
 import it.derrik.Vista.VistaPrincipale;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,7 +20,7 @@ public class Suggeritore {
 
     private Giocatore giocatore1;
     private Giocatore giocatore2;
-    private ArrayList<String> suggerimenti = new ArrayList<String>();
+    private Set<String> suggerimenti = new HashSet<String>();
     private VistaPrincipale vp;
 
     public Suggeritore(Giocatore giocatore1, Giocatore giocatore2, VistaPrincipale vp) {
@@ -554,19 +556,23 @@ public class Suggeritore {
         this.suggerimentiCarteMazzo();
         this.suggerimentiTurno();
         this.suggerimentiEroe();
+        ArrayList<String> suggerimenti = new ArrayList<>();
+        for(String string: this.suggerimenti){
+            suggerimenti.add(string);
+        }
         Random random = new Random();
         String s = "\n";
-        int j1 = random.nextInt(this.suggerimenti.size());
-        int j2 = random.nextInt(this.suggerimenti.size());
-        int j3 = random.nextInt(this.suggerimenti.size());
+        int j1 = random.nextInt(suggerimenti.size());
+        int j2 = random.nextInt(suggerimenti.size());
+        int j3 = random.nextInt(suggerimenti.size());
         if (j1 == j2 && j2 == j3) {
-            s = s + this.suggerimenti.get(j1);
+            s = s + suggerimenti.get(j1);
         } else if (j1 == j2 && j1 != j3) {
-            s = s + this.suggerimenti.get(j1) + "\n" + this.suggerimenti.get(j3);
+            s = s + suggerimenti.get(j1) + "\n" + suggerimenti.get(j3);
         } else if (j1 != j2 && j1 == j3) {
-            s = s + this.suggerimenti.get(j1) + "\n" + this.suggerimenti.get(j2);
+            s = s + suggerimenti.get(j1) + "\n" + suggerimenti.get(j2);
         } else {
-            s = s + this.suggerimenti.get(j1) + "\n" + this.suggerimenti.get(j2) + "\n" + this.suggerimenti.get(
+            s = s + suggerimenti.get(j1) + "\n" + suggerimenti.get(j2) + "\n" + suggerimenti.get(
                     j3);
         }
 
