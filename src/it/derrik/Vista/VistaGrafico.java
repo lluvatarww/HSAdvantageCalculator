@@ -1,5 +1,7 @@
 package it.derrik.Vista;
 
+import java.awt.Color;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,13 +12,16 @@ package it.derrik.Vista;
  *
  * @author derrik
  */
-public class VistaGrafico extends javax.swing.JFrame {
+public class VistaGrafico extends javax.swing.JDialog {
 
     /**
      * Creates new form VistaGrafico
      */
     public VistaGrafico() {
         initComponents();
+        this.setAlwaysOnTop(true);
+        this.setTitle("Grafico Andamento Partita");
+        this.setLocation(50, 50);
     }
 
     /**
@@ -28,7 +33,7 @@ public class VistaGrafico extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

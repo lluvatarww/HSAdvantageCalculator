@@ -32,6 +32,7 @@ public class Principale extends javax.swing.JFrame {
         this.setResizable(false);
         fsm = vp.getFsm();
         this.menuNuovaPartita.setAction(new AzioneNuovaPartita(vp, fsm));
+        
     }
 
     /**
