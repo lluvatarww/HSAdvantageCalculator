@@ -40,8 +40,9 @@ public class FrameSceltaMazzo extends javax.swing.JFrame {
         panel.add(bottoneScelta, BorderLayout.SOUTH);
         bottoneScelta.setAction(new AzioneScelta(this, vp));
         this.setContentPane(panel);
+        this.setAlwaysOnTop(true);
         this.pack();
-       this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     /**

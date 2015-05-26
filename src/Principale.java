@@ -3,13 +3,13 @@ import it.derrik.Controllo.AzioneNuovaPartita;
 import it.derrik.Vista.FrameSceltaMazzo;
 import it.derrik.Vista.VistaPrincipale;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author derrik
@@ -19,10 +19,9 @@ public class Principale extends javax.swing.JFrame {
     /**
      * Creates new form Principale
      */
-    
     VistaPrincipale vp;
     FrameSceltaMazzo fsm;
-    
+
     public Principale() {
         initComponents();
         this.setTitle("HS Advantage Calculator");
@@ -32,7 +31,7 @@ public class Principale extends javax.swing.JFrame {
         this.setResizable(false);
         fsm = vp.getFsm();
         this.menuNuovaPartita.setAction(new AzioneNuovaPartita(vp, fsm));
-        
+
     }
 
     /**
@@ -68,6 +67,11 @@ public class Principale extends javax.swing.JFrame {
         jMenuBar1.add(menuFile);
 
         menuInfo.setText("?");
+        menuInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuInfoActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(menuInfo);
 
         setJMenuBar(jMenuBar1);
@@ -89,6 +93,13 @@ public class Principale extends javax.swing.JFrame {
     private void menuEsciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEsciActionPerformed
         System.exit(0);
     }//GEN-LAST:event_menuEsciActionPerformed
+
+    private void menuInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuInfoActionPerformed
+        JOptionPane.showMessageDialog(this, "Come Funziona:\n"
+                + "Clicca su Nuova Partita all'inizio del gioco, selezionando la classe con cui giocherai e quella dell'avversario per iniziare la partita \n"
+                + "Inserisci alla fine del tuo turno i valori richiesti (sono dati facilissimi da trovare) e premi il tasto Nuovo Turno.\n"
+                + "Verrà visualizzata una percentuale che indica una stima dell'andamento della partita in base all'ultima giocata fatta. \n Ovviamente si può calcolare in qualsiasi momento della partita, ma è consigliabile farlo alla fine del proprio turno.\n", "Come si usa", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_menuInfoActionPerformed
 
     /**
      * @param args the command line arguments
