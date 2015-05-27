@@ -36,6 +36,7 @@ public class AzioneNuovaPartita extends AbstractAction {
     public void actionPerformed(ActionEvent ae) {
         fsm.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         fsm.setVisible(true);
+        this.blocca();
         vp.getContatoreTurno().setText("0");
         vp.setTurno(0);
         vp.getPv().setValue(30);
@@ -58,6 +59,21 @@ public class AzioneNuovaPartita extends AbstractAction {
         vp.setGrafico(new Grafico());
         vp.getVg().getContentPane().removeAll();
         vp.getjTextArea1().setText("Qui usciranno dei suggerimenti durante la partita");
+    }
+    
+    private void blocca(){
+        vp.getPv().setEnabled(false);
+        vp.getPv1().setEnabled(false);
+        vp.getCig().setEnabled(false);
+        vp.getCig1().setEnabled(false);
+        vp.getCim1().setEnabled(false);
+        vp.getCim().setEnabled(false);
+        vp.getCiz().setEnabled(false);
+        vp.getCiz1().setEnabled(false);
+        vp.getDig1().setEnabled(false);
+        vp.getDig().setEnabled(false);
+        vp.getSSP().setEnabled(false);
+        vp.getSSP1().setEnabled(false);
     }
     
 }

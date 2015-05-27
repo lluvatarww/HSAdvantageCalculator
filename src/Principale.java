@@ -48,6 +48,8 @@ public class Principale extends javax.swing.JFrame {
         menuNuovaPartita = new javax.swing.JMenuItem();
         menuEsci = new javax.swing.JMenuItem();
         menuInfo = new javax.swing.JMenu();
+        menuAbout = new javax.swing.JMenuItem();
+        menuHow = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,11 +69,23 @@ public class Principale extends javax.swing.JFrame {
         jMenuBar1.add(menuFile);
 
         menuInfo.setText("?");
-        menuInfo.addActionListener(new java.awt.event.ActionListener() {
+
+        menuAbout.setText("About");
+        menuAbout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuInfoActionPerformed(evt);
+                menuAboutActionPerformed(evt);
             }
         });
+        menuInfo.add(menuAbout);
+
+        menuHow.setText("Come funziona");
+        menuHow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuHowActionPerformed(evt);
+            }
+        });
+        menuInfo.add(menuHow);
+
         jMenuBar1.add(menuInfo);
 
         setJMenuBar(jMenuBar1);
@@ -94,12 +108,19 @@ public class Principale extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_menuEsciActionPerformed
 
-    private void menuInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuInfoActionPerformed
-        JOptionPane.showMessageDialog(this, "Come Funziona:\n"
+    private void menuHowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuHowActionPerformed
+       JOptionPane.showMessageDialog(this, "Come Funziona:\n"
                 + "Clicca su Nuova Partita all'inizio del gioco, selezionando la classe con cui giocherai e quella dell'avversario per iniziare la partita \n"
                 + "Inserisci alla fine del tuo turno i valori richiesti (sono dati facilissimi da trovare) e premi il tasto Nuovo Turno.\n"
                 + "Verrà visualizzata una percentuale che indica una stima dell'andamento della partita in base all'ultima giocata fatta. \n Ovviamente si può calcolare in qualsiasi momento della partita, ma è consigliabile farlo alla fine del proprio turno.\n", "Come si usa", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_menuInfoActionPerformed
+        
+    }//GEN-LAST:event_menuHowActionPerformed
+
+    private void menuAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAboutActionPerformed
+        JOptionPane.showMessageDialog(vp, "Versione 1.0 \n"
+                + "Author: Francesco D'Errico \n"
+                + "Contact me: francesco.derrik@gmail.com");
+    }//GEN-LAST:event_menuAboutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,8 +164,10 @@ public class Principale extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem menuAbout;
     private javax.swing.JMenuItem menuEsci;
     private javax.swing.JMenu menuFile;
+    private javax.swing.JMenuItem menuHow;
     private javax.swing.JMenu menuInfo;
     private javax.swing.JMenuItem menuNuovaPartita;
     // End of variables declaration//GEN-END:variables
