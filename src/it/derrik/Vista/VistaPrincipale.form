@@ -730,6 +730,7 @@
     </Component>
     <Component class="javax.swing.JCheckBox" name="boxConta">
       <Properties>
+        <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="Conteggia"/>
         <Property name="toolTipText" type="java.lang.String" value="Aggiungi la partita alle statistiche"/>
       </Properties>

@@ -418,6 +418,7 @@ public class VistaPrincipale extends javax.swing.JPanel {
 
         bottoneLose.setText("Sconfitta");
 
+        boxConta.setSelected(true);
         boxConta.setText("Conteggia");
         boxConta.setToolTipText("Aggiungi la partita alle statistiche");
 

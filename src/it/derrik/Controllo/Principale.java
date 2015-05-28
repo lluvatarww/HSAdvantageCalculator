@@ -1,9 +1,10 @@
+package it.derrik.Controllo;
+
 
 import it.derrik.Controllo.AzioneNuovaPartita;
 import it.derrik.Controllo.AzioneNuovoGiocatore;
 import it.derrik.Modello.Statistiche;
 import it.derrik.Persistenza.DAOStat;
-import it.derrik.Vista.FrameSceltaMazzo;
 import it.derrik.Vista.VistaPrincipale;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -17,7 +18,7 @@ import javax.swing.JOptionPane;
  *
  * @author derrik
  */
-public class Principale extends javax.swing.JFrame {
+public class Principale extends JFrame {
 
     /**
      * Creates new form Principale
@@ -145,7 +146,7 @@ public class Principale extends javax.swing.JFrame {
     }//GEN-LAST:event_menuHowActionPerformed
 
     private void menuAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAboutActionPerformed
-        JOptionPane.showMessageDialog(vp, "Versione 1.0 \n"
+        JOptionPane.showMessageDialog(vp, "Versione 1.1 \n"
                 + "Author: Francesco D'Errico \n"
                 + "Contact me: francesco.derrik@gmail.com");
     }//GEN-LAST:event_menuAboutActionPerformed
@@ -200,4 +201,7 @@ public class Principale extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuNuovaPartita;
     private javax.swing.JMenuItem menuNuovoGiocatore;
     // End of variables declaration//GEN-END:variables
+
+
+    
 }

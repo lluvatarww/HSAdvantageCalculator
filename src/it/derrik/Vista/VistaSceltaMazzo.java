@@ -1,6 +1,7 @@
 package it.derrik.Vista;
 
 
+import it.derrik.Modello.Costanti;
 import it.derrik.Modello.Deselezionatore;
 import java.util.ArrayList;
 import javax.swing.JToggleButton;
@@ -25,22 +26,31 @@ public class VistaSceltaMazzo extends javax.swing.JPanel {
         jLabel1.setText(nome);
         listaBottoni.add(bottoneMago);
         bottoneMago.addItemListener(new Deselezionatore(this, 0));
+        bottoneMago.setText(Costanti.MAGO);
         listaBottoni.add(bottoneCacciatore);
         bottoneCacciatore.addItemListener(new Deselezionatore(this, 1));
+        bottoneCacciatore.setText(Costanti.CACCIATORE);
         listaBottoni.add(bottoneDruido);
         bottoneDruido.addItemListener(new Deselezionatore(this, 2));
+        bottoneDruido.setText(Costanti.DRUIDO);
         listaBottoni.add(bottoneLadro);
         bottoneLadro.addItemListener(new Deselezionatore(this, 3));
+        bottoneLadro.setText(Costanti.LADRO);
         listaBottoni.add(bottonePaladino);
         bottonePaladino.addItemListener(new Deselezionatore(this, 4));
+        bottonePaladino.setText(Costanti.PALADINO);
         listaBottoni.add(bottoneSacerdote);
         bottoneSacerdote.addItemListener(new Deselezionatore(this, 5));
+        bottoneSacerdote.setText(Costanti.SACERDOTE);
         listaBottoni.add(bottoneStregone);
         bottoneStregone.addItemListener(new Deselezionatore(this, 6));
+        bottoneStregone.setText(Costanti.STREGONE);
         listaBottoni.add(bottoneSciamano);
         bottoneSciamano.addItemListener(new Deselezionatore(this, 7));
+        bottoneSciamano.setText(Costanti.SCIAMANO);
         listaBottoni.add(bottoneGuerriero);
         bottoneGuerriero.addItemListener(new Deselezionatore(this, 8));
+        bottoneGuerriero.setText(Costanti.GUERRIERO);
         
     }
 

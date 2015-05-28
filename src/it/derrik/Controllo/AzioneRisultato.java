@@ -6,6 +6,8 @@
 package it.derrik.Controllo;
 
 
+
+import it.derrik.Modello.Statistiche;
 import it.derrik.Vista.VistaPrincipale;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -33,16 +35,38 @@ public class AzioneRisultato extends AbstractAction {
    
     @Override
     public void actionPerformed(ActionEvent ae) {
+        Statistiche stats = Principale.stats;
+        vp.getBottoneNuovoTurno().setEnabled(false);
+        vp.blocca();
         if(this.nome.equals("Vittoria")){
             JOptionPane.showMessageDialog(vp, "Complimenti, hai vinto", "Risultato", JOptionPane.INFORMATION_MESSAGE);
-            vp.getBottoneNuovaPartita().setEnabled(true);
-            vp.blocca();
+            if(vp.getBoxConta().isSelected()){
+                this.aggiungiStatVittoria(stats);
+            }
         }
         else{
             JOptionPane.showMessageDialog(vp, "Peccato, hai perso", "Risultato", JOptionPane.ERROR_MESSAGE);
-            vp.getBottoneNuovaPartita().setEnabled(true);
-            vp.blocca();
+            if(vp.getBoxConta().isSelected()){
+                this.aggiungiStatSconfitta(stats);
+            }
         }
+       vp.getBottoneNuovaPartita().setEnabled(true);
+       Principale.dao.salva(stats);
     }
     
+    public void aggiungiStatVittoria(Statistiche stats){
+        stats.setPartite(stats.getPartite() + 1);
+        stats.calcolaMedia(vp.getTurno());
+        String nome = vp.getGiocatore1().getEroe();
+        int valore = stats.getVittorieEroe().get(nome) + 1;
+        stats.getVittorieEroe().put(nome, valore);
+    }
+    
+    public void aggiungiStatSconfitta(Statistiche stats){
+        stats.setPartite(stats.getPartite() + 1);
+        stats.setSconfitte(stats.getSconfitte() + 1);
+        String nome = vp.getGiocatore2().getEroe();
+        int valore = stats.getSconfitteEroe().get(nome) + 1;
+        stats.getSconfitteEroe().put(nome, valore);
+    }
 }
