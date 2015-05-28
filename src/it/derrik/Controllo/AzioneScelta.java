@@ -33,7 +33,7 @@ public class AzioneScelta extends AbstractAction {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        this.sblocca();
+        vp.sblocca();
         String nome1 = prendiNome(fsm.getTu().getListaBottoni());
         String nome2 = prendiNome(fsm.getAvversario().getListaBottoni());
         vp.setGiocatore1(creaGiocatore(nome1));
@@ -109,18 +109,5 @@ public class AzioneScelta extends AbstractAction {
         return new Giocatore(30, 0, 4, 26, 0, 0, nome);
     }
 
-    private void sblocca() {
-        vp.getPv().setEnabled(true);
-        vp.getPv1().setEnabled(true);
-        vp.getCig().setEnabled(true);
-        vp.getCig1().setEnabled(true);
-        vp.getCim1().setEnabled(true);
-        vp.getCim().setEnabled(true);
-        vp.getCiz().setEnabled(true);
-        vp.getCiz1().setEnabled(true);
-        vp.getDig1().setEnabled(true);
-        vp.getDig().setEnabled(true);
-        vp.getSSP().setEnabled(true);
-        vp.getSSP1().setEnabled(true);
-    }
+    
 }

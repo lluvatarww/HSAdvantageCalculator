@@ -4,10 +4,12 @@ package it.derrik.Vista;
 import it.derrik.Controllo.AzioneGAP;
 import it.derrik.Controllo.AzioneNuovaPartita;
 import it.derrik.Controllo.AzioneNuovoTurno;
+import it.derrik.Controllo.AzioneRisultato;
 import it.derrik.Modello.Suggeritore;
 import it.derrik.Modello.Grafico;
 import it.derrik.Modello.Giocatore;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -40,6 +42,9 @@ public class VistaPrincipale extends javax.swing.JPanel {
         this.vg.setResizable(false);
         this.bottoneNuovoTurno.setAction(new AzioneNuovoTurno(this));
         this.bottoneNuovoTurno.setEnabled(false);
+        this.bottoneWin.setAction(new AzioneRisultato(this, "Vittoria"));
+        this.bottoneLose.setAction(new AzioneRisultato(this, "Sconfitta"));
+        this.blocca();
     }
 
     @SuppressWarnings("unchecked")
@@ -92,6 +97,9 @@ public class VistaPrincipale extends javax.swing.JPanel {
         javax.swing.JLabel labelTurni = new javax.swing.JLabel();
         contatoreTurno = new javax.swing.JLabel();
         GAP = new javax.swing.JButton();
+        bottoneWin = new javax.swing.JButton();
+        bottoneLose = new javax.swing.JButton();
+        boxConta = new javax.swing.JCheckBox();
 
         pannelloGiocatore1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         pannelloGiocatore1.setToolTipText("il totale è calcolato secondo la formula PuntiVita + dannoInGioco - dannoAvversario + carteInGioco + 4 * ( carte in mano+ carte nel mazzo)");
@@ -406,6 +414,13 @@ public class VistaPrincipale extends javax.swing.JPanel {
         GAP.setToolTipText("Premi per mostrare il Grafico Andamento Partita");
         GAP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        bottoneWin.setText("Vittoria");
+
+        bottoneLose.setText("Sconfitta");
+
+        boxConta.setText("Conteggia");
+        boxConta.setToolTipText("Aggiungi la partita alle statistiche");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -417,17 +432,26 @@ public class VistaPrincipale extends javax.swing.JPanel {
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(pannelloGiocatore2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(bottoneNuovaPartita, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bottoneNuovoTurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(labelTurni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
+                                .addGap(22, 22, 22)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(info, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(contatoreTurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(GAP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(bottoneNuovaPartita, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(bottoneNuovoTurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelTurni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(30, 30, 30)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(info, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(contatoreTurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(GAP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(boxConta)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(bottoneLose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(bottoneWin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                         .addGap(18, 18, 18)
                         .addComponent(pannelloGiocatore1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -448,6 +472,12 @@ public class VistaPrincipale extends javax.swing.JPanel {
                         .addComponent(labelTurni)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(contatoreTurno)
+                        .addGap(13, 13, 13)
+                        .addComponent(bottoneWin)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bottoneLose)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(boxConta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(GAP, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -478,8 +508,11 @@ public class VistaPrincipale extends javax.swing.JPanel {
     private javax.swing.JButton GAP;
     private javax.swing.JSpinner SSP;
     private javax.swing.JSpinner SSP1;
+    private javax.swing.JButton bottoneLose;
     private javax.swing.JButton bottoneNuovaPartita;
     private javax.swing.JButton bottoneNuovoTurno;
+    private javax.swing.JButton bottoneWin;
+    private javax.swing.JCheckBox boxConta;
     private javax.swing.JSpinner cig;
     private javax.swing.JSpinner cig1;
     private javax.swing.JSpinner cim;
@@ -791,6 +824,56 @@ public class VistaPrincipale extends javax.swing.JPanel {
     public void setButton(JButton button) {
         this.button = button;
     }
+
+    public JButton getBottoneLose() {
+        return bottoneLose;
+    }
+
+    public JButton getBottoneWin() {
+        return bottoneWin;
+    }
+
+    public JCheckBox getBoxConta() {
+        return boxConta;
+    }
     
     
+    
+    public void sblocca() {
+        this.getPv().setEnabled(true);
+        this.getPv1().setEnabled(true);
+        this.getCig().setEnabled(true);
+        this.getCig1().setEnabled(true);
+        this.getCim1().setEnabled(true);
+        this.getCim().setEnabled(true);
+        this.getCiz().setEnabled(true);
+        this.getCiz1().setEnabled(true);
+        this.getDig1().setEnabled(true);
+        this.getDig().setEnabled(true);
+        this.getSSP().setEnabled(true);
+        this.getSSP1().setEnabled(true);
+        this.getBottoneLose().setEnabled(true);
+        this.getBottoneWin().setEnabled(true);
+        this.getBoxConta().setEnabled(true);
+    }
+    
+    public void blocca() {
+        this.getPv().setEnabled(false);
+        this.getPv1().setEnabled(false);
+        this.getCig().setEnabled(false);
+        this.getCig1().setEnabled(false);
+        this.getCim1().setEnabled(false);
+        this.getCim().setEnabled(false);
+        this.getCiz().setEnabled(false);
+        this.getCiz1().setEnabled(false);
+        this.getDig1().setEnabled(false);
+        this.getDig().setEnabled(false);
+        this.getSSP().setEnabled(false);
+        this.getSSP1().setEnabled(false);
+        this.getBottoneLose().setEnabled(false);
+        this.getBottoneWin().setEnabled(false);
+        this.getBoxConta().setEnabled(false);
+    }
+
+
 }

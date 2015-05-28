@@ -23,19 +23,33 @@
                   <Component id="jScrollPane1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="pannelloGiocatore2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="bottoneNuovaPartita" max="32767" attributes="0"/>
-                          <Component id="bottoneNuovoTurno" alignment="0" max="32767" attributes="0"/>
-                          <Component id="labelTurni" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="info" max="32767" attributes="0"/>
-                                  <Component id="contatoreTurno" max="32767" attributes="0"/>
+                                  <Component id="bottoneNuovaPartita" max="32767" attributes="0"/>
+                                  <Component id="bottoneNuovoTurno" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="labelTurni" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="info" max="32767" attributes="0"/>
+                                          <Component id="contatoreTurno" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="GAP" alignment="1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="GAP" alignment="1" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="boxConta" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="bottoneLose" max="32767" attributes="0"/>
+                                      <Component id="bottoneWin" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="pannelloGiocatore1" min="-2" max="-2" attributes="0"/>
@@ -61,6 +75,12 @@
                       <Component id="labelTurni" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="contatoreTurno" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Component id="bottoneWin" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="bottoneLose" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="boxConta" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="GAP" min="-2" pref="34" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -624,7 +644,7 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Nuovo Turno"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Default Cursor"/>
+          <Color id="Cursore predefinito"/>
         </Property>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
@@ -633,7 +653,7 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Nuova Partita"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Default Cursor"/>
+          <Color id="Cursore predefinito"/>
         </Property>
       </Properties>
     </Component>
@@ -667,7 +687,7 @@
               <Border info="null"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Cursore predefinito"/>
             </Property>
           </Properties>
         </Component>
@@ -694,8 +714,24 @@
         <Property name="text" type="java.lang.String" value="GAP"/>
         <Property name="toolTipText" type="java.lang.String" value="Premi per mostrare il Grafico Andamento Partita"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Default Cursor"/>
+          <Color id="Cursore predefinito"/>
         </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="bottoneWin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Vittoria"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="bottoneLose">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sconfitta"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="boxConta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Conteggia"/>
+        <Property name="toolTipText" type="java.lang.String" value="Aggiungi la partita alle statistiche"/>
       </Properties>
     </Component>
   </SubComponents>
