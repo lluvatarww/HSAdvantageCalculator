@@ -1,5 +1,8 @@
 
 import it.derrik.Controllo.AzioneNuovaPartita;
+import it.derrik.Controllo.AzioneNuovoGiocatore;
+import it.derrik.Modello.Statistiche;
+import it.derrik.Persistenza.DAOStat;
 import it.derrik.Vista.FrameSceltaMazzo;
 import it.derrik.Vista.VistaPrincipale;
 import javax.swing.JFrame;
@@ -20,8 +23,9 @@ public class Principale extends javax.swing.JFrame {
      * Creates new form Principale
      */
     VistaPrincipale vp;
-    FrameSceltaMazzo fsm;
-
+    public static Statistiche stats;
+    public static DAOStat dao = new DAOStat();
+    
     public Principale() {
         initComponents();
         this.setTitle("HS Advantage Calculator");
@@ -29,11 +33,30 @@ public class Principale extends javax.swing.JFrame {
         this.setContentPane(vp);
         this.pack();
         this.setResizable(false);
-        fsm = vp.getFsm();
-        this.menuNuovaPartita.setAction(new AzioneNuovaPartita(vp, fsm));
-
+        vp.getBottoneNuovaPartita().setEnabled(false);
+        this.menuNuovaPartita.setAction(new AzioneNuovaPartita(vp, vp.getFsm()));
+        String nome = dao.caricaNome();
+        if(nome != null){
+        vp.getLabelGiocatore().setText(nome);
+        vp.getBottoneNuovaPartita().setEnabled(true);
+        }
+        stats = dao.carica(vp.getLabelGiocatore().getText() + ".txt");
+        if(stats == null){
+           stats = new Statistiche();
+        }
+        this.menuNuovoGiocatore.setAction(new AzioneNuovoGiocatore(stats, dao, vp));
     }
 
+    public Statistiche getStats() {
+        return stats;
+    }
+
+    public void setStats(Statistiche stats) {
+        this.stats = stats;
+    }
+
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,6 +68,7 @@ public class Principale extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         menuFile = new javax.swing.JMenu();
+        menuNuovoGiocatore = new javax.swing.JMenuItem();
         menuNuovaPartita = new javax.swing.JMenuItem();
         menuEsci = new javax.swing.JMenuItem();
         menuInfo = new javax.swing.JMenu();
@@ -55,7 +79,11 @@ public class Principale extends javax.swing.JFrame {
 
         menuFile.setText("File");
 
+        menuNuovoGiocatore.setText("NuovoGiocatore");
+        menuFile.add(menuNuovoGiocatore);
+
         menuNuovaPartita.setText("Nuova Partita");
+        menuNuovaPartita.setEnabled(false);
         menuFile.add(menuNuovaPartita);
 
         menuEsci.setText("Esci");
@@ -170,5 +198,6 @@ public class Principale extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuHow;
     private javax.swing.JMenu menuInfo;
     private javax.swing.JMenuItem menuNuovaPartita;
+    private javax.swing.JMenuItem menuNuovoGiocatore;
     // End of variables declaration//GEN-END:variables
 }

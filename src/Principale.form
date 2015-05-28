@@ -9,9 +9,15 @@
             <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
           <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="menuNuovoGiocatore">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="NuovoGiocatore"/>
+              </Properties>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuNuovaPartita">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nuova Partita"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuEsci">

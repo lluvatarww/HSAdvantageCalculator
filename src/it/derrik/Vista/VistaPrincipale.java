@@ -78,7 +78,7 @@ public class VistaPrincipale extends javax.swing.JPanel {
         javax.swing.JLabel jLabel7 = new javax.swing.JLabel();
         cig1 = new javax.swing.JSpinner();
         javax.swing.JLabel jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        labelGiocatore = new javax.swing.JLabel();
         cim1 = new javax.swing.JSpinner();
         javax.swing.JLabel jLabel13 = new javax.swing.JLabel();
         ciz1 = new javax.swing.JSpinner();
@@ -276,7 +276,7 @@ public class VistaPrincipale extends javax.swing.JPanel {
         jLabel11.setText("Servitori in Gioco");
         jLabel11.setToolTipText("inserisci il numero delle carte in gioco, compresi i poteri eroe");
 
-        jLabel12.setText("Tu");
+        labelGiocatore.setText("Tu");
 
         cim1.setModel(new javax.swing.SpinnerNumberModel(4, 0, 10, 1));
 
@@ -318,7 +318,7 @@ public class VistaPrincipale extends javax.swing.JPanel {
                         .addComponent(pv1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pannelloGiocatore2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
+                            .addComponent(labelGiocatore)
                             .addComponent(jLabel7)))
                     .addGroup(pannelloGiocatore2Layout.createSequentialGroup()
                         .addComponent(cim1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -345,7 +345,7 @@ public class VistaPrincipale extends javax.swing.JPanel {
         pannelloGiocatore2Layout.setVerticalGroup(
             pannelloGiocatore2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pannelloGiocatore2Layout.createSequentialGroup()
-                .addComponent(jLabel12)
+                .addComponent(labelGiocatore)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pannelloGiocatore2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -526,12 +526,12 @@ public class VistaPrincipale extends javax.swing.JPanel {
     private javax.swing.JLabel immagineMazzo;
     private javax.swing.JLabel immagineMazzoAvversario;
     private javax.swing.JButton info;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel labelGiocatore;
     private javax.swing.JPanel pannelloBasso;
     private javax.swing.JPanel pannelloGiocatore1;
     private javax.swing.JPanel pannelloGiocatore2;
@@ -835,6 +835,14 @@ public class VistaPrincipale extends javax.swing.JPanel {
 
     public JCheckBox getBoxConta() {
         return boxConta;
+    }
+
+    public JLabel getLabelGiocatore() {
+        return labelGiocatore;
+    }
+
+    public void setLabelGiocatore(JLabel labelGiocatore) {
+        this.labelGiocatore = labelGiocatore;
     }
     
     

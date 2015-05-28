@@ -1,6 +1,7 @@
 package it.derrik.Vista;
 
 
+
 import it.derrik.Controllo.AzioneScelta;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
@@ -24,7 +25,7 @@ public class FrameSceltaMazzo extends javax.swing.JFrame {
      * Creates new form FrameSceltaMazzo
      */
     
-    private VistaSceltaMazzo tu = new VistaSceltaMazzo("Tu");
+    private VistaSceltaMazzo tu;
     private VistaSceltaMazzo avversario = new VistaSceltaMazzo("Avversario");
     private JButton bottoneScelta = new JButton("Inizia");
     private VistaPrincipale vp;
@@ -32,6 +33,7 @@ public class FrameSceltaMazzo extends javax.swing.JFrame {
     public FrameSceltaMazzo(VistaPrincipale vp) {
         initComponents();
         this.vp = vp;
+        this.tu = new VistaSceltaMazzo(vp.getLabelGiocatore().getText());
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout(10, 10));
         panel.add( new JLabel("Scegli i campioni in gioco"),BorderLayout.NORTH);
