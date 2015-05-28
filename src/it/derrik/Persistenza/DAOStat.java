@@ -50,6 +50,16 @@ public class DAOStat {
         try{
             BufferedReader br = new BufferedReader(new FileReader(nomeFile));
             stats.setNomeGiocatore(br.readLine());
+            stats.setPartite(Integer.parseInt(br.readLine()));
+            stats.setVittorie(Integer.parseInt(br.readLine()));
+            stats.setSconfitte(Integer.parseInt(br.readLine()));
+            stats.setMediaTurni(Float.parseFloat(br.readLine()));
+             for(String string : stats.getVittorieEroe().keySet()){
+                stats.getVittorieEroe().put(string, Integer.parseInt(br.readLine()));
+            }
+            for(String string : stats.getSconfitteEroe().keySet()){
+               stats.getSconfitteEroe().put(string, Integer.parseInt(br.readLine()));
+            }
             br.close();
         }catch(Exception e){
             stats = null;
